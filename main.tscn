@@ -1,0 +1,103 @@
+[gd_scene format=4 uid="uid://be8514h0v1q00"]
+
+[ext_resource type="Script" uid="uid://bty8ydeuj5uh6" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://clshlftrakvkc" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://7ls8oed1tyt" path="res://greentileset.png" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bhsx0sip5xxnd" path="res://appendix.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://bh1fkiph4qgmp" path="res://spike_hitbox.gd" id="4_1bvp3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("2_h2yge")
+texture_region_size = Vector2i(14, 14)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nj6ro"]
+tile_size = Vector2i(14, 14)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncssj"]
+size = Vector2(238, 6)
+
+[node name="main" type="Node2D" unique_id=1408691134]
+script = ExtResource("1_lquwl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=861868972]
+offset_left = -989.0
+offset_top = -219.0
+offset_right = 1208.0
+offset_bottom = 724.0
+color = Color(0.15167388, 0, 0, 1)
+
+[node name="MainWalls" type="TileMapLayer" parent="." unique_id=1344165990]
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAABAAAAAAAAAAAAAAD7/wAAAAAAAAAAAADo/wkAAAACAAAAAADn/wkAAAACAAAAAADn/woAAAACAAAAAADn/wsAAAACAAAAAADn/wwAAAACAAAAAADn/w0AAAACAAAAAADn/w4AAAACAAAAAADn/w8AAAACAAAAAADo/w8AAAACAAAAAADp/w8AAAACAAAAAADq/w8AAAACAAAAAADr/w8AAAACAAAAAADs/w8AAAACAAAAAADt/w8AAAACAAAAAADu/w8AAAACAAAAAADv/w8AAAACAAAAAADw/w8AAAACAAAAAADx/w8AAAACAAAAAADy/w8AAAACAAAAAADz/w8AAAACAAAAAAD0/w8AAAACAAAAAAD1/w8AAAACAAAAAAD2/w8AAAACAAAAAAD3/w8AAAACAAAAAAD4/w8AAAACAAAAAAD5/w8AAAACAAAAAAD6/w8AAAACAAAAAAD7/w8AAAACAAAAAAD8/w8AAAACAAAAAAD9/w8AAAACAAAAAAD+/w8AAAACAAAAAAD//w8AAAACAAAAAAAAAA8AAAACAAAAAAABAA8AAAACAAAAAAACAA8AAAACAAAAAAADAA8AAAACAAAAAAAEAA8AAAACAAAAAAAFAA8AAAACAAAAAAAGAA8AAAACAAAAAAAHAA8AAAACAAAAAAAIAA8AAAACAAAAAAAJAA8AAAACAAAAAAAKAA8AAAACAAAAAAALAA8AAAACAAAAAAAMAA8AAAACAAAAAAANAA8AAAACAAAAAAAOAA8AAAACAAAAAAAPAA8AAAACAAAAAAAQAA8AAAACAAAAAAARAA8AAAACAAAAAAASAA8AAAACAAAAAAATAA8AAAACAAAAAAATAA4AAAACAAAAAAATAA0AAAACAAAAAAATAAwAAAACAAAAAAATAAsAAAACAAAAAAATAAoAAAACAAAAAAATAAkAAAACAAAAAAATAAgAAAACAAAAAAATAAcAAAACAAAAAAATAAYAAAACAAAAAAASAAYAAAACAAAAAAARAAYAAAACAAAAAAAQAAYAAAACAAAAAAAPAAYAAAACAAAAAAAOAAYAAAACAAAAAAANAAYAAAACAAAAAAAMAAYAAAACAAAAAAALAAYAAAACAAAAAAAKAAYAAAACAAAAAAAJAAYAAAACAAAAAAAIAAYAAAACAAAAAAAHAAYAAAACAAAAAAAGAAYAAAACAAAAAAAFAAYAAAACAAAAAAAEAAYAAAACAAAAAAAEAAUAAAACAAAAAAAEAAQAAAACAAAAAAAEAAMAAAACAAAAAAAEAAIAAAACAAAAAAAEAAEAAAACAAAAAAAEAAAAAAACAAAAAAAEAP//AAACAAAAAAAEAP7/AAACAAAAAAAEAP3/AAACAAAAAAAEAPz/AAACAAAAAAAEAPv/AAACAAAAAAAEAPr/AAACAAAAAAAEAAcAAAACAAAAAAAEAAgAAAACAAAAAAAEAAkAAAACAAAAAAAEAAoAAAACAAAAAADp/wkAAAACAAAAAADq/wkAAAACAAAAAADr/wkAAAACAAAAAADs/wkAAAACAAAAAADt/wkAAAACAAAAAADu/wkAAAACAAAAAADv/wkAAAACAAAAAADw/wkAAAACAAAAAADx/wkAAAACAAAAAADy/wkAAAACAAAAAADz/wkAAAACAAAAAAD0/wkAAAACAAAAAAD1/wkAAAACAAAAAAD2/wkAAAACAAAAAAD3/wkAAAACAAAAAAD4/wkAAAACAAAAAAD4/wgAAAACAAAAAAD4/wcAAAACAAAAAAD4/wYAAAACAAAAAAD4/wUAAAACAAAAAAD4/wQAAAACAAAAAAD4/wMAAAACAAAAAAD4/wIAAAACAAAAAAD4/wEAAAACAAAAAAD4/wAAAAACAAAAAAD4////AAACAAAAAAD4//7/AAACAAAAAAD4//3/AAACAAAAAAD4//z/AAACAAAAAAD4//v/AAACAAAAAAD4//r/AAACAAAAAAAHAA4AAAABAAEAAAAHAA0AAAABAAEAAAAHAAwAAAABAAEAAAAHAAsAAAABAAEAAAD3/w4AAAAAAAIAAAD2/w4AAAAAAAIAAAD1/w4AAAAAAAIAAAD0/w4AAAAAAAIAAADz/w4AAAAAAAIAAADy/w4AAAAAAAIAAADx/w4AAAAAAAIAAADw/w4AAAAAAAIAAADv/w4AAAAAAAIAAADu/w4AAAAAAAIAAADt/w4AAAAAAAIAAADs/w4AAAAAAAIAAADr/w4AAAAAAAIAAADq/w4AAAAAAAIAAADp/w4AAAAAAAIAAADo/w4AAAAAAAIAAAD4/w4AAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_nj6ro")
+rendering_quadrant_size = 14
+
+[node name="BubblyBlocks" type="TileMapLayer" parent="." unique_id=717714548]
+tile_map_data = PackedByteArray("AAAHAAcAAAAAAAEAAAAHAAgAAAAAAAEAAAADAAYAAAAAAAEAAAACAAYAAAAAAAEAAAABAAYAAAAAAAEAAAAAAAYAAAAAAAEAAAD//wYAAAAAAAEAAAD+/wYAAAAAAAEAAAD9/wYAAAAAAAEAAAD8/wYAAAAAAAEAAAD7/wYAAAAAAAEAAAD6/wYAAAAAAAEAAAD5/wYAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_nj6ro")
+rendering_quadrant_size = 14
+collision_enabled = false
+
+[node name="SpiralBlocks" type="TileMapLayer" parent="." unique_id=1736755694]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAEAAAD8/wAAAAACAAEAAAAHAAoAAAACAAEAAAANAA4AAAACAAEAAAAHAAkAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_nj6ro")
+rendering_quadrant_size = 14
+
+[node name="Player" parent="." unique_id=480473720 instance=ExtResource("2_0xm2m")]
+position = Vector2(-21, -7)
+
+[node name="Appendix" parent="." unique_id=341339472 instance=ExtResource("3_h2yge")]
+position = Vector2(191, 171)
+collision_mask = 15
+
+[node name="SpikeHitbox" type="Area2D" parent="." unique_id=1538579410]
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeHitbox" unique_id=905543457]
+position = Vector2(-217, 206)
+shape = SubResource("RectangleShape2D_ncssj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1891862541]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1298596570]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 82.0
+offset_bottom = 69.0
+text = "ESCAPE!
+30.0"
+horizontal_alignment = 1
+
+[node name="EscapeTimer" type="Timer" parent="." unique_id=1663908388]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="body_entered" from="Appendix" to="." method="_on_appendix_body_entered"]
+[connection signal="body_entered" from="SpikeHitbox" to="SpikeHitbox" method="_on_body_entered"]
+[connection signal="timeout" from="EscapeTimer" to="." method="_on_escape_timer_timeout"]
